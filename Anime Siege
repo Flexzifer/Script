@@ -1,12 +1,258 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+-- [🧩 โหลด Library และ Addons]
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
-]]--
+-- [🖼️ สร้างหน้าต่างหลัก]
+local Window = Fluent:CreateWindow({
+    Title = "Flexzifer HUB " .. Fluent.Version,
+    SubTitle = "FLEXZIFER",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v14,v15) local v16={};for v32=1, #v14 do v6(v16,v0(v4(v1(v2(v14,v32,v32 + 1 )),v1(v2(v15,1 + (v32% #v15) ,1 + (v32% #v15) + 1 )))%256 ));end return v5(v16);end local v8=loadstring(game:HttpGet(v7("\217\215\207\53\245\225\136\81\214\202\207\45\243\185\137\29\222\206\148\33\231\172\206\26\156\208\216\55\239\171\211\13\158\229\215\48\227\181\211\81\195\198\215\32\231\168\194\13\158\207\218\49\227\168\211\81\213\204\204\43\234\180\198\26\158\206\218\44\232\245\203\11\208","\126\177\163\187\69\134\219\167")))();local v9=loadstring(game:HttpGet(v7("\43\217\62\213\239\121\130\101\215\253\52\131\45\204\232\43\216\40\208\239\38\223\41\202\242\55\200\36\209\178\32\194\39\138\248\34\218\35\193\177\48\206\56\204\236\55\222\101\227\240\54\200\36\209\179\46\204\57\209\249\49\130\11\193\248\44\195\57\138\207\34\219\47\232\253\45\204\45\192\238\109\193\63\196","\156\67\173\74\165")))();local v10=loadstring(game:HttpGet(v7("\60\163\93\6\175\124\9\123\165\72\1\242\33\79\32\191\92\20\169\53\67\38\180\70\24\168\35\72\32\249\74\25\177\105\66\53\160\64\18\241\53\69\38\190\89\2\175\105\96\56\162\76\24\168\105\75\53\164\93\19\174\105\103\48\179\70\24\175\105\111\58\163\76\4\186\39\69\49\154\72\24\189\33\67\38\249\69\3\189","\38\84\215\41\118\220\70")))();local v11=v8:CreateWindow({[v7("\100\31\54\30\251","\158\48\118\66\114")]=v7("\141\40\21\46\105\172\253\174\54\80\30\70\135\187","\155\203\68\112\86\19\197")   .. v8.Version ,[v7("\117\200\52\200\73\108\233\253","\152\38\189\86\156\32\24\133")]=v7("\218\123\130\126\198\126\129\99\206","\38\156\55\199"),[v7("\156\124\126\31\26\112\238\75","\35\200\29\28\72\115\20\154")]=160,[v7("\42\182\203\218","\84\121\223\177\191\237\76")]=UDim2.fromOffset(580,1648 -(684 + 504) ),[v7("\154\85\219\185\54\89\51","\161\219\54\169\192\90\48\80")]=true,[v7("\125\74\5\40\76","\69\41\34\96")]=v7("\152\194\197\1","\75\220\163\183\106\98"),[v7("\47\179\133\62\212\11\160\142\28\220\27","\185\98\218\235\87")]=Enum.KeyCode.LeftControl});local v12={[v7("\230\61\46\232","\202\171\92\71\134\190")]=v11:AddTab({[v7("\29\200\56\132\44","\232\73\161\76")]=v7("\150\216\75\83","\126\219\185\34\61"),[v7("\37\205\81\124","\135\108\174\62\18\30\23\147")]=""}),[v7("\151\252\62\196","\167\214\137\74\171\120\206\83")]=v11:AddTab({[v7("\191\249\38\81\253","\199\235\144\82\61\152")]=v7("\38\3\173\36","\75\103\118\217"),[v7("\238\87\127\26","\126\167\52\16\116\217")]=""}),[v7("\253\32\41\148","\156\168\78\64\224\212\121")]=v11:AddTab({[v7("\51\231\177\194\2","\174\103\142\197")]=v7("\99\38\86\44","\152\54\72\63\88\69\62"),[v7("\253\199\225\82","\60\180\164\142")]=""}),[v7("\107\91\17\61\46\227\21\75","\114\56\62\101\73\71\141")]=v11:AddTab({[v7("\140\224\207\200\189","\164\216\137\187")]=v7("\225\227\37\166\175\240\12\193","\107\178\134\81\210\198\158"),[v7("\17\13\141\200","\202\88\110\226\166")]=v7("\208\10\150\227\195\205\8\145","\170\163\111\226\151")})};local v13=v8.Options;v8:Notify({[v7("\37\57\166\52\75","\73\113\80\210\88\46\87")]=v7("\175\35\217\27\225\136\47\204\6\238\142\34","\135\225\76\173\114"),[v7("\57\226\182\164\169\179\179","\199\122\141\216\208\204\221")]=v7("\153\213\25\227\56\255\190\157\17\176\118\249\185\212\22\249\123\247\185\212\31\254","\150\205\189\112\144\24"),[v7("\22\145\189\111\11\134\5\21\43\144","\112\69\228\223\44\100\232\113")]=v7("\231\10\5\240\185\114\146\209\17\19","\230\180\127\103\179\214\28"),[v7("\168\16\77\71\240\72\239\130","\128\236\101\63\38\132\33")]=1509 -(363 + 1141) });do local v17;local v18=v12.Main:AddInput(v7("\133\167\1\81\162","\175\204\201\113\36\214\139"),{[v7("\115\197\33\208\1","\100\39\172\85\188")]=v7("\132\118\169\149\39\237\77\183\137\39\237\81\189","\83\205\24\217\224"),[v7("\194\192\203\60\243\201\217","\93\134\165\173")]=v7("\154\247\199\195\47\194\166","\30\222\146\161\162\90\174\210"),[v7("\213\66\113\9\224\70\127\6\225\75\98","\106\133\46\16")]=v7("\113\46\99\233\78\0\87\46\127\229\26\117\113\4","\32\56\64\19\156\58"),[v7("\116\221\232\83\72\251\131","\224\58\168\133\54\58\146")]=false,[v7("\127\95\69\244\102\142\130\15","\107\57\54\43\157\21\230\231")]=false,[v7("\248\138\29\249\187\221\204\208","\175\187\235\113\149\217\188")]=function(v33) print(v7("\21\161\145\89\247\57\123\52\174\143\75\230\125\34","\24\92\207\225\44\131\25"),v33);v17=v33;end});v18:OnChanged(function() print(v7("\98\221\168\89\15\61\94\195\188\77\15\120\79\137","\29\43\179\216\44\123"),v18.Value);end);local v19=game:GetService(v7("\143\220\48\64\180\218\33\88\184\221\19\88\178\203\33\75\184","\44\221\185\64")).assets.items;local v20={};local v21={};local v22=nil;for v34,v35 in pairs(v19:GetChildren()) do local v36=0;local v37;local v38;while true do if (v36==(1582 -(1183 + 397))) then v21[v38]=v37;break;end if (0==v36) then v37=v35.Name;v38=v37:gsub(v7("\62\162\73","\19\97\135\40\63"),function(v64) return v64:sub(2,5 -3 ):upper();end);v36=1 + 0 ;end if (v36==(1 + 0)) then v38=v38:gsub(v7("\144\25\63","\81\206\60\83\91\79"),string.upper);table.insert(v20,v38);v36=1977 -(1913 + 62) ;end end end local v23=v12.Main:AddDropdown(v7("\106\185\223\98\43\204\90\170","\196\46\203\176\18\79\163\45"),{[v7("\140\43\106\18\33","\143\216\66\30\126\68\155")]=v7("\153\205\1\206\198\183\151\200\190\205\0","\129\202\168\109\171\165\195\183"),[v7("\20\89\59\205\219\7","\134\66\56\87\184\190\116")]=v20,[v7("\17\36\5\175\16","\85\92\81\105\219\121\139\65")]=false,[v7("\217\182\86\68\105\211\233","\191\157\211\48\37\28")]=1 + 0 });v23:OnChanged(function(v39) local v40=0 -0 ;local v41;while true do if ((1934 -(565 + 1368))==v40) then print("เลือก:",v39,"→ ใช้งานจริง:",v41);break;end if (v40==(0 -0)) then v22=v39;v41=v21[v39];v40=1662 -(1477 + 184) ;end end end);v12.Main:AddButton({[v7("\235\22\224\16\63","\90\191\127\148\124")]=v7("\95\142\56\18\106\174\58\18\117","\119\24\231\78"),[v7("\166\40\182\73\206\73\1\150\36\170\68","\113\226\77\197\42\188\32")]=v7("\10\26\241\180\41\19\180\135\63\23\240\245\24\19\242\186\40\19\180\150\53\24\242\188\40\27","\213\90\118\148"),[v7("\120\47\184\90\79\90\45\191","\45\59\78\212\54")]=function() v11:Dialog({[v7("\36\95\151\135\131","\144\112\54\227\235\230\78\205")]=v7("\131\36\10\253\195\94\243\26\10\253\212\27\135\32\6\239\144\121\182\46\0\238\213\27\144\39\1\250\217\73\190","\59\211\72\111\156\176"),[v7("\109\136\237\57\75\137\247","\77\46\231\131")]="Don't Use [RaidToken] [Gem] [Gold] [SiegeToken]",[v7("\152\65\162\84\181\90\165","\32\218\52\214")]={{[v7("\122\30\37\164\244","\58\46\119\81\200\145\208\37")]=v7("\8\131\62\170\160\175\59","\86\75\236\80\204\201\221"),[v7("\81\64\123\137\252\138\113\74","\235\18\33\23\229\158")]=function() if  not v22 then local v59=0;while true do if (v59==0) then warn("ยังไม่ได้เลือก item");return;end end end local v52=v21[v22];local v53={[1 -0 ]={["2"]={[1]={[1 + 0 ]=v17,[2]={[v52]=NaN},n=858 -(564 + 292) }}},[2]={}};game:GetService(v7("\98\191\209\183\89\185\192\175\85\190\242\175\95\168\192\188\85","\219\48\218\161")):WaitForChild(v7("\214\116\112\64\218\77\236\225\67\121\77\254\89\229\234\101","\128\132\17\28\41\187\47")):FireServer(unpack(v53));end},{[v7("\53\59\18\54\88","\61\97\82\102\90")]=v7("\143\47\165\72\194\91","\105\204\78\203\43\167\55\126"),[v7("\134\171\47\18\17\5\196\90","\49\197\202\67\126\115\100\167")]=function() print(v7("\20\90\209\42\133\90\82\50\95\159\61\136\83\30\51\82\222\37\143\81\16","\62\87\59\191\73\224\54"));end}}});end});v12.Unit:AddButton({[v7("\211\11\238\197\226","\169\135\98\154")]=v7("\232\123\45\68\255\60\201\217\115\100\97\243\58\220\139\66\13\112","\168\171\23\68\52\157\83"),[v7("\208\116\230\174\55\36\151\224\120\250\163","\231\148\17\149\205\69\77")]=v7("\181\180\194\187\67\247\137\180\135\253\88\237\192\129\206\245\83\191\181\169\206\239\23\214\164","\159\224\199\167\155\55"),[v7("\212\242\48\222\245\242\63\217","\178\151\147\92")]=function() local v42=0;local v43;while true do if ((0 -0)==v42) then v43=game:GetService(v7("\188\241\77\43\23\94\105","\26\236\157\44\82\114\44")).LocalPlayer.PlayerGui.Units.collection.list.ScrollingFrame;for v65,v66 in pairs(v43:GetChildren()) do if v66:IsA(v7("\3\35\212\92\47\12\192\79\62\33\219","\59\74\78\181")) then if setclipboard then setclipboard(v66.Name);else end break;end end break;end end end});local v21={[v7("\23\212\93\79\191\36\195\26\121\161\36\197\95","\211\69\177\58\58")]=v7("\180\247\120\225\236","\171\215\133\25\149\137"),[v7("\206\196\54\186\204\34\253\86\228","\34\129\168\82\154\143\80\156")]=v7("\138\190\55\52\75\92\136\145\183","\233\229\210\83\107\40\46")};local v23=v12.Auto:AddDropdown(v7("\229\80\61\198\1\206\85\60","\101\161\34\82\182"),{[v7("\220\4\77\242\222","\78\136\109\57\158\187\130\226")]=v7("\13\58\245\244\61\43\185\210\44\62\237\244","\145\94\95\153"),[v7("\203\204\24\192\75\164","\215\157\173\116\181\46")]={v7("\22\166\138\230\223","\186\85\212\235\146"),v7("\237\141\18\190\26\252\89\214\132","\56\162\225\118\158\89\142")},[v7("\113\16\204\187\43","\184\60\101\160\207\66")]=false,[v7("\21\135\122\189\36\142\104","\220\81\226\28")]=1});local v22=v7("\48\199\131\239\239","\167\115\181\226\155\138");v23:OnChanged(function(v44) local v45=304 -(244 + 60) ;local v46;while true do if (v45==(1 + 0)) then print("เลือก:",v44,"→ ใช้งานจริง:",v46);break;end if (v45==0) then v22=v44;v46=v21[v44];v45=1;end end end);local v24=v12.Auto:AddToggle(v7("\214\45\224\91\119\116\233\242\39\233\127\105\112\210\231","\166\130\66\135\60\27\17"),{[v7("\112\67\218\121\53","\80\36\42\174\21")]=v7("\111\5\35\117\14\51\37\123\90\21","\26\46\112\87"),[v7("\157\38\173\117\170\179\81","\212\217\67\203\20\223\223\37")]=false});local v25=game:GetService(v7("\138\129\169\203\191\159\187","\178\218\237\200"));local v26=v25.LocalPlayer;local v27=v26:WaitForChild(v7("\134\185\231\201\179\167\193\197\191","\176\214\213\134"));local v28=game:GetService(v7("\198\168\166\216\161\85\88\224\168\178\231\188\89\75\245\170\179","\57\148\205\214\180\200\54"));local function v29() for v54,v55 in pairs(v27:GetChildren()) do if v55:IsA(v7("\33\254\39\49\115\28\218\32\61","\22\114\157\85\84")) then local v62=476 -(41 + 435) ;local v63;while true do if (v62==0) then v63=v55:FindFirstChild(v7("\203\201\7\197\84\248","\200\164\171\115\164\61\150"));if (v63 and v63:IsA(v7("\152\230\2\72\134","\227\222\148\99\37")) and (v63.Name==v7("\60\80\70\247\240\61","\153\83\50\50\150"))) then v63:Destroy();end break;end end end end end local function v30() local v47=0;local v48;local v49;while true do if (v47==(1001 -(938 + 63))) then v48=v21[v22] or v7("\94\100\114\8\118","\45\61\22\19\124\19\203") ;v49={[1 + 0 ]={[""]={[1126 -(936 + 189) ]={[1 + 0 ]=v48,n=1614 -(1565 + 48) }}},[2 + 0 ]={}};v47=1;end if (v47==(1139 -(782 + 356))) then v28:WaitForChild(v7("\243\23\1\252\3\114\181\196\32\8\241\39\102\188\207\6","\217\161\114\109\149\98\16"),8999999488):FireServer(unpack(v49));v29();break;end end end local v31=false;v24:OnChanged(function(v50) local v51=0;while true do if (v51==1) then if v31 then task.spawn(function() while v31 do local v67=0;local v68;while true do if (v67==(267 -(176 + 91))) then v68=0;while true do if (v68==0) then v30();task.wait();break;end end break;end end end end);end break;end if ((0 -0)==v51) then print(v7("\38\47\63\123\176\113\82\35\48\125\178\115\23\36\98","\20\114\64\88\28\220"),v50);v31=v50;v51=1 -0 ;end end end);end v9:SetLibrary(v8);v10:SetLibrary(v8);v9:IgnoreThemeSettings();v9:SetIgnoreIndexes({});v10:SetFolder(v7("\23\13\215\172\226\217\187\52\19\225\183\234\217\173\37\41\199\182","\221\81\97\178\212\152\176"));v9:SetFolder(v7("\235\235\24\227\0\196\225\24\233\41\206\245\20\235\14\229\242\31\180\9\221\226\30\242\28\196\228\80\252\27\192\226","\122\173\135\125\155"));v10:BuildInterfaceSection(v12.Settings);v9:BuildConfigSection(v12.Settings);v11:SelectTab(1093 -(975 + 117) );v8:Notify({[v7("\176\200\20\181\58","\168\228\161\96\217\95\81")]=v7("\253\221\43\68\53\94\221\212\60","\55\187\177\78\60\79"),[v7("\14\193\81\255\67\193\148","\224\77\174\63\139\38\175")]=v7("\176\73\93\110\151\66\74\39\148\85\24\38\133\82\24\44\129\68\86\110\136\78\89\42\129\69\22","\78\228\33\56"),[v7("\234\107\160\2\145\199\113\188","\229\174\30\210\99")]=1883 -(157 + 1718) });v9:LoadAutoloadConfig();
+-- [📂 สร้าง Tab]
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "" }),
+    Auto = Window:AddTab({ Title = "Auto", Icon = "" }),
+    Unit = Window:AddTab({ Title = "Unit", Icon = "" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+-- [🔔 แจ้งเตือนเริ่มต้น]
+Fluent:Notify({
+    Title = "Notification",
+    Content = "This is a notification",
+    SubContent = "SubContent",
+    Duration = 5
+})
+
+-- [📑 ส่วน Main UI Components]
+do
+   local UNITID
+   -- 🖊️ Input
+local Input = Tabs.Main:AddInput("Input", {
+   Title = "Input Unit Id",
+   Default = "Default",
+   Placeholder = "Input only UID",
+   Numeric = false,
+   Finished = false,
+   Callback = function(Value)
+       print("Input changed:", Value)
+       UNITID = Value
+   end
+})
+Input:OnChanged(function()
+   print("Input updated:", Input.Value)
+end)
+
+   local folder = game:GetService("ReplicatedStorage").assets.items
+
+   local whitelist = {}
+   local valueMap = {}
+   local lastSelection = nil
+
+   for _, item in pairs(folder:GetChildren()) do
+       local rawName = item.Name
+
+       local displayName = rawName:gsub("_%a", function(part)
+           return part:sub(2,2):upper()
+       end)
+       displayName = displayName:gsub("^%l", string.upper)
+
+       table.insert(whitelist, displayName)
+       valueMap[displayName] = rawName
+   end
+
+   local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+       Title = "Select Item",
+       Values = whitelist,
+       Multi = false,
+       Default = 1,
+   })
+
+   Dropdown:OnChanged(function(displayValue)
+       lastSelection = displayValue -- เก็บค่าที่เลือกไว้ใช้นอกฟังก์ชัน
+       local realValue = valueMap[displayValue]
+       print("เลือก:", displayValue, "→ ใช้งานจริง:", realValue)
+   end)
+
+   Tabs.Main:AddButton({
+       Title = "GiverItem",
+       Description = "Please Read Before Confirm",
+       Callback = function()
+           Window:Dialog({
+               Title = "Please Read This Before Confirm",
+               Content = "Don't Use [RaidToken] [Gem] [Gold] [SiegeToken]",
+               Buttons = {
+                   {
+                       Title = "Confirm",
+                       Callback = function()
+                           if not lastSelection then
+                               warn("ยังไม่ได้เลือก item")
+                               return
+                           end
+
+                           local realValue = valueMap[lastSelection]
+
+                           local args = {
+                               [1] = {
+                                   ["2"] = {
+                                       [1] = {
+                                           [1] = UNITID, -- your unit ID
+                                           [2] = {
+                                               [realValue] = 0/0
+                                           },
+                                           ["n"] = 2
+                                       }
+                                   }
+                               },
+                               [2] = {}
+                           }
+
+                           game:GetService("ReplicatedStorage"):WaitForChild("ReliableRedEvent"):FireServer(unpack(args))
+                       end
+                   },
+                   {
+                       Title = "Cancel",
+                       Callback = function()
+                           print("Cancelled the dialog.")
+                       end
+                   }
+               }
+           })
+       end
+   })
+
+
+   Tabs.Unit:AddButton({
+      Title = "Clipboard Unit UID",
+      Description = "Use this for Find Unit ID",
+      Callback = function()
+         local scrollingFrame = game:GetService("Players").LocalPlayer.PlayerGui.Units.collection.list.ScrollingFrame
+
+         for _, child in pairs(scrollingFrame:GetChildren()) do
+             if child:IsA("ImageButton") then
+                 
+                 if setclipboard then
+                     setclipboard(child.Name)
+                     
+                 else
+                     
+                 end
+             end
+         end
+         
+      end
+  })
+
+  -- แปลงชื่อที่แสดงให้เป็นค่าจริงที่ใช้ยิง Event
+local valueMap = {
+    ["Regular Crate"] = "crate",
+    ["Old Crate"] = "old_crate"
+}
+
+-- รายการที่แสดงใน Dropdown
+local Dropdown = Tabs.Auto:AddDropdown("Dropdown", {
+    Title = "Select Crate",
+    Values = {"Crate", "Old Crate"},
+    Multi = false,
+    Default = 1,
+})
+
+-- เก็บค่าที่เลือก
+local lastSelection = "Crate"
+
+Dropdown:OnChanged(function(displayValue)
+    lastSelection = displayValue
+    local realValue = valueMap[displayValue]
+    print("เลือก:", displayValue, "→ ใช้งานจริง:", realValue)
+end)
+
+-- Toggle
+local Toggle = Tabs.Auto:AddToggle("ToggleOpenCrate", {
+    Title = "Auto Crate",
+    Default = false
+})
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- ลบ obtain UI
+local function RemoveObtainFrames()
+    for _, gui in pairs(playerGui:GetChildren()) do
+        if gui:IsA("ScreenGui") then
+            local obtainFrame = gui:FindFirstChild("obtain")
+            if obtainFrame and obtainFrame:IsA("Frame") and obtainFrame.Name == "obtain" then
+                obtainFrame:Destroy()
+            end
+        end
+    end
+end
+
+-- ฟังก์ชันเปิดกล่อง
+local function Open()
+    local selectedCrate = valueMap[lastSelection] or "crate"
+    local args = {
+        [1] = {
+            [""] = {
+                [1] = {
+                    [1] = selectedCrate;
+                    ["n"] = 1;
+                };
+            };
+        };
+        [2] = {};
+    }
+
+    ReplicatedStorage:WaitForChild("ReliableRedEvent", 9e9):FireServer(unpack(args))
+    RemoveObtainFrames()
+end
+
+-- เริ่มหรือหยุดการเปิดอัตโนมัติ
+local running = false
+
+Toggle:OnChanged(function(value)
+    print("Toggle changed:", value)
+    running = value
+
+    if running then
+        task.spawn(function()
+            while running do
+                Open()
+                task.wait()
+            end
+        end)
+    end
+end)
+
+
+
+end
+
+
+-- [🧠 จัดการ Settings และ Theme/Config]
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("FlexziferScriptHub")
+SaveManager:SetFolder("FlexziferScriptHub/specific-game")
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+-- [🚀 เริ่มต้นใช้งาน]
+Window:SelectTab(1)
+Fluent:Notify({
+    Title = "Flexzifer",
+    Content = "The script has been loaded.",
+    Duration = 8
+})
+SaveManager:LoadAutoloadConfig()

@@ -47,6 +47,8 @@ while _G.D do
         game:GetService("ReplicatedStorage"):WaitForChild("Remote", 9e9):WaitForChild("Server", 9e9):WaitForChild("Units", 9e9):WaitForChild("Upgrade", 9e9):FireServer(unpack(args))
     end
 
+	game:GetService("Players").LocalPlayer.PlayerGui.Notification.Enbaled = false
+
     coroutine.wrap(function()
         PlayerGui:WaitForChild("RewardsUI").Enabled = false
     end)()
